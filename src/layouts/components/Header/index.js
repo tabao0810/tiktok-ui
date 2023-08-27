@@ -13,7 +13,7 @@ import {
   faSignOut,
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
-import routeConfig from '~/config/routes';
+import config from '~/config';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css'; // optional
 import Button from '~/components/Button';
@@ -47,6 +47,7 @@ function Header() {
     { icon: <FontAwesomeIcon icon={faCoins} />, title: 'Get coins', to: '' },
     { icon: <FontAwesomeIcon icon={faGear} />, title: 'Settings', to: '' },
     { icon: <FontAwesomeIcon icon={faSignOut} />, title: 'Logout', to: '', separate: true },
+    ...MENU_ITEM,
   ];
 
   const handleChangeMenu = (menuItem) => {
@@ -55,7 +56,7 @@ function Header() {
   return (
     <header className={cx('wrapper')}>
       <div className={cx('inner')}>
-        <Link to={routeConfig.home} className={cx('logo')}>
+        <Link to={config.routes.home} className={cx('logo')}>
           <img src={images.logo} alt="TikTok" />
         </Link>
         {/* Search */}

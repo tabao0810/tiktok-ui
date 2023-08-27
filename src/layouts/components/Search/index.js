@@ -46,6 +46,7 @@ function Search() {
     e.preventDefault();
   };
   return (
+    // fix warning tippy
     <div>
       <HeadLessTippy
         interactive
